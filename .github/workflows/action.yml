@@ -15,16 +15,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Cache Primes
-      id: cache-primes
-      uses: actions/cache@v3
-      with:
-        path: prime-numbers
-        key: ${{ runner.os }}
-
-    - name: Generate Prime Numbers
-      if: steps.cache-primes.outputs.cache-hit != 'true'
-      run: /generate-primes.sh -d prime-numbers
-
     - name: Use Prime Numbers
-      run: /primes.sh -d prime-numbers
+      run: echo this is test
