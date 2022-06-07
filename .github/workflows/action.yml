@@ -1,6 +1,12 @@
 name: Caching Primes
 
 on: push
+   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'enter one of the environments '
+        required: true
+        default: 'linux'
 
 jobs:
   build:
