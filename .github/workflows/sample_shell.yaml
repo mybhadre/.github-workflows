@@ -19,7 +19,9 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
-      run: ${GITHUB_ACTION_PATH}/sample.sh
-      shell: bash
-      with:
-        who-to-greet: ${{ github.event.inputs.name }}
+      - run: |
+          # make file runnable, might not be necessary
+          chmod +x "${GITHUB_WORKSPACE}/.github/sample.sh"
+
+          # run script
+          "${GITHUB_WORKSPACE}/.github/sample.sh"
