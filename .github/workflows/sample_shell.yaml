@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           # make file runnable, might not be necessary
-          chmod +x "${GITHUB_WORKSPACE}/.github/sample.sh"
+          chmod +x "${GITHUB_WORKSPACE}/sample.sh"
 
           # run script
-          "${GITHUB_WORKSPACE}/.github/sample.sh"
+          "${GITHUB_WORKSPACE}/sample.sh"
