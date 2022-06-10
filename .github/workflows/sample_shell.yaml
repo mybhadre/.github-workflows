@@ -1,0 +1,25 @@
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Please enter Name?'
+        required: false
+        default: 'World'
+      who-to-greet:
+        description: 'Who to greet'
+        required: false
+        default: 'World'
+
+
+jobs:
+  manual:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macos-latest, windows-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - id: hello
+        uses: ./sample.sh
+        with:
+          who-to-greet: ${{ github.event.inputs.name }}
