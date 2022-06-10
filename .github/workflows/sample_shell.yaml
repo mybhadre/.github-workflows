@@ -19,7 +19,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
-        run: PATH/sample.sh
-        shell: bash
-        with:
-          who-to-greet: ${{ github.event.inputs.name }}
+      run: ${GITHUB_ACTION_PATH}/sample.sh
+      shell: bash
+      with:
+        who-to-greet: ${{ github.event.inputs.name }}
