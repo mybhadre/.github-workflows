@@ -24,4 +24,4 @@ jobs:
           chmod +x "${GITHUB_WORKSPACE}/sample.sh"
 
           # run script
-          "${GITHUB_WORKSPACE}/sample.sh"
+          "${GITHUB_WORKSPACE}/sample.sh "${{ inputs.who-to-greet }}""
